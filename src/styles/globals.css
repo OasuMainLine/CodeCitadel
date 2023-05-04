@@ -2,8 +2,138 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @font-face {
-  font-family: "alma mono";
-  src: url();
+	font-family: 'alma-mono';
+	src: url("./fonts/almamono-bold-webfont.woff2") format("woff2"),
+		url("./fonts/almamono-regular-webfont.woff2") format("woff2"),
+		url("./fonts/almamono-thin-webfont.woff2") format("woff2"),
+		url("./fonts/almamono-light-webfont.woff2") format("woff2"),
+		url("./fonts/almamono-heavy-webfont.woff2") format("woff2"),
+    url("./fonts/almamono-bold-webfont.woff") format("woff"),
+		url("./fonts/almamono-regular-webfont.woff") format("woff"),
+		url("./fonts/almamono-thin-webfont.woff") format("woff"),
+		url("./fonts/almamono-light-webfont.woff") format("woff"),
+		url("./fonts/almamono-heavy-webfont.woff") format("woff"),
+    url("./fonts/almamono-bold.ttf") format("truetype"),
+		url("./fonts/almamono-regular.ttf") format("truetype"),
+		url("./fonts/almamono-thin.ttf") format("truetype"),
+		url("./fonts/almamono-light.ttf") format("truetype"),
+		url("./fonts/almamono-heavy.ttf") format("truetype");
+
 }
+
+@layer utilities {
+	.unset {
+	}
+}
+@layer components {
+	.link {
+    background-image: linear-gradient(90deg, rgba(55,170,120,1) 50%, rgba(255,255,255,1) 50%);
+    background-clip: text;-webkit-background-clip: text;
+    color: transparent;
+    background-size: 200% 100%;
+    background-position-x: -100%;
+    transition: background-position 200ms ease-in-out;
+	}
+  .link:hover{
+      background-position-x: -200%;
+  }
+	.active-link {
+		@apply text-primary font-bold bg-none;
+	}
+
+  .postcard {
+    /* mask-border-outset:  .5rem; */
+    position: relative;
+  }
+   
+  
+  .postcard::after {
+    content: "";
+    position: absolute;
+    width: 102%;
+    height: 110%;
+    top: -5%;
+    left: -2%;
+    /* --_i: 100%; */
+    border: 3px solid white;
+    -webkit-mask: 
+      conic-gradient(from 180deg at top 8px right 8px, #0000 90deg,#000 0)
+       var(--size,200%) 0  /200% var(--size,8px) border-box no-repeat,
+      conic-gradient(at bottom 8px left  8px,  #0000 90deg,#000 0)
+       0   var(--size,200%)/var(--size,8px) 200% border-box no-repeat,
+      linear-gradient(#000 0 0) padding-box no-repeat;
+    
+    background-image:  conic-gradient(from 180deg at top 8px right 8px, red 90deg,red 0)
+       var(--size,200%) 0  /200% var(--size,8px) border-box no-repeat,
+      conic-gradient(at bottom 8px left  8px,  red 90deg,red 0)
+       0   var(--size,200%)/var(--size,8px) 200% border-box no-repeat,
+      linear-gradient(red 0 0) padding-box no-repeat;
+    transition: .3s, -webkit-mask-position .3s .3s;
+   
+  }
+  .postcard:hover::after {
+    --size: 100%;
+    color: #CC333F;
+    transition: .3s, -webkit-mask-size .3s .3s;
+  }
+  
+  
+  .active-pill-primary{
+    @apply bg-primary
+  }
+  .active-pill-secondary{
+    @apply bg-secondary
+  }
+  .active-pill-alt{
+    @apply bg-alt
+  }
+
+  .pill-primary{
+    @apply border-primary
+  }
+  .pill-secondary{
+    @apply border-secondary
+  }
+  .pill-alt{
+    @apply border-alt
+  }
+
+  .bulleted-list li{
+    position: relative;
+  }
+  .bulleted-list li::before{
+    @apply bg-secondary;
+    content: "";
+    display: block;
+    width: .4rem;
+    height: .4rem;
+    border-radius: 99999px;
+    
+    position: absolute;
+    top: 0.6666667em;
+    left: -0.6666667em;
+  }
+  .bulleted-list.list-depth-1 li::before{ 
+    @apply bg-alt;
+  }
+  .bulleted-list.list-depth-2 li::before{
+    @apply bg-primary;
+  }
+  img + em {
+    @apply text-iGray;
+    margin: auto auto;
+    text-align: center;
+    width: fit-content;
+    display: block;
+  }
+
+  @media screen and (max-width: 768px) {
+      .postcard::after{
+          border: none;
+      }
+  }
+}
+
+
+
