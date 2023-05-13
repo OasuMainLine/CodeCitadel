@@ -2,24 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-	font-family: "alma-mono";
-	src: url("./fonts/almamono-bold-webfont.woff2") format("woff2"),
-		url("./fonts/almamono-regular-webfont.woff2") format("woff2"),
-		url("./fonts/almamono-thin-webfont.woff2") format("woff2"),
-		url("./fonts/almamono-light-webfont.woff2") format("woff2"),
-		url("./fonts/almamono-heavy-webfont.woff2") format("woff2"),
-		url("./fonts/almamono-bold-webfont.woff") format("woff"),
-		url("./fonts/almamono-regular-webfont.woff") format("woff"),
-		url("./fonts/almamono-thin-webfont.woff") format("woff"),
-		url("./fonts/almamono-light-webfont.woff") format("woff"),
-		url("./fonts/almamono-heavy-webfont.woff") format("woff"),
-		url("./fonts/almamono-bold.ttf") format("truetype"),
-		url("./fonts/almamono-regular.ttf") format("truetype"),
-		url("./fonts/almamono-thin.ttf") format("truetype"),
-		url("./fonts/almamono-light.ttf") format("truetype"),
-		url("./fonts/almamono-heavy.ttf") format("truetype");
-}
+ 
 
 @layer utilities {
 	.custom-scroll::-webkit-scrollbar,
