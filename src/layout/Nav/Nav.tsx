@@ -83,9 +83,7 @@ export default function Nav() {
 				</NavItem>
 
 				<ul className="flex gap-2 ml-10 md:hidden mt-5">
-					<li>
-						<SocialIcon icon={Icon.INSTAGRAM} />
-					</li>
+			 
 					<li>
 						<SocialIcon icon={Icon.LINKENDL} />
 					</li>
