@@ -24,7 +24,7 @@ export async function readPost(path: string): Promise<Post>{
     const fileContents = readFileSync(path, "utf-8");
     const matterRes = matter(fileContents);
 
-    let {slug, title, date, summary, categories} = matterRes.data
+    let {slug, title, date, summary, categories, image} = matterRes.data
 
 
     if(slug == undefined){
@@ -40,6 +40,7 @@ export async function readPost(path: string): Promise<Post>{
         date: formmatedDate,
         summary,
         categories: transformCategories(categories),
+        image,
         content: content.toString(),
    
     }

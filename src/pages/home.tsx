@@ -1,8 +1,7 @@
 import LinkPill, { LinkPillType } from "@/components/LinkPill";
 import PostCard from "@/components/PostCard";
-import SearchBar from "@/components/SearchBar";
-import { CategoryType, Post } from "../../lib/types";
-import Image from "next/image";
+import { Post } from "../../lib/types";
+import Spinner from "@/components/Spinner";
 import {
 	_deserializePosts,
 	_generatePost,
@@ -19,6 +18,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
 		props: {
 			postsJSON: _serializePosts(posts),
 		},
+
 	};
 };
 
