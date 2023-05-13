@@ -14,7 +14,7 @@ type SocialIconProps = {
 const LINKS = {
 	[Icon.INSTAGRAM]: "https://www.instagram.com",
 	[Icon.LINKENDL]: "https://www.linkedin.com/in/orlandosandi/",
-	[Icon.GMAIL]: "https://www.gmail.com",
+	[Icon.GMAIL]: "mailto:thecodecitadel@gmail.com",
 };
 const ICONS = {
 	[Icon.INSTAGRAM]: "/icons/icon_instagram.png",

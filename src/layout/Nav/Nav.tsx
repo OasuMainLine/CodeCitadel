@@ -109,9 +109,6 @@ export default function Nav() {
 			></div>
 			<ul className="md:flex gap-2 ml-10 hidden">
 				<li>
-					<SocialIcon icon={Icon.INSTAGRAM} />
-				</li>
-				<li>
 					<SocialIcon icon={Icon.LINKENDL} />
 				</li>
 				<li>
