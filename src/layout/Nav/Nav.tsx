@@ -83,7 +83,6 @@ export default function Nav() {
 				</NavItem>
 
 				<ul className="flex gap-2 ml-10 md:hidden mt-5">
-			 
 					<li>
 						<SocialIcon icon={Icon.LINKENDL} />
 					</li>
@@ -102,7 +101,7 @@ export default function Nav() {
 				onFocus={() => setShowBarBox(true)}
 			/>
 			<div
-				className={`overlay fixed w-screen h-screen top-0 left-0 pointer-events-none`}
+				className={`overlay fixed w-screen h-screen top-0 left-0 `}
 				onClick={() => setShowBarBox(false)}
 			></div>
 			<ul className="md:flex gap-2 ml-10 hidden">
