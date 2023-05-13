@@ -26,11 +26,13 @@ const About = ({ html }: AboutProps) => {
 					I'm&nbsp;
 					<span className="text-secondary font-bold">Orlando!</span>
 				</h1>
-				<div className="relative w-fit h-fit">
-					<AsyncImage
+				<div className="relative w-fit h-fit scale-75 md:transform-none">
+					<Image
 						alt="A photo of me! The author of the page"
 						src={MyImage}
-						className="rounded-tl-[80px] rounded-br-[80px] md:rounded-tl-[120px] md:rounded-br-[120px] w-60 md:w-auto"
+						width={421}
+						height={468}
+						className="rounded-tl-[80px] rounded-br-[80px] md:rounded-tl-[120px] md:rounded-br-[120px]"
 					/>
 					<motion.svg
 						width="293"
@@ -38,7 +40,7 @@ const About = ({ html }: AboutProps) => {
 						viewBox="0 0 293 77"
 						fill="none"
 						xmlns="http://www.w3.org/2000/svg"
-						className="absolute -bottom-4 -left-10 w-40 md:w-auto"
+						className="absolute -bottom-4 -left-10"
 					>
 						<motion.path
 							d="M17.5 55.5C34.3333 26.6666 75.8 -13.7 107 55.5C111 64.3 115 59.1666 116.5 55.5C129.167 26.5 161.5 -14.1001 189.5 55.5C194.7 62.7 199.667 58.5 201.5 55.5C213 29.4999 244 -6.90007 276 55.5"
@@ -64,7 +66,7 @@ const About = ({ html }: AboutProps) => {
 						fill="none"
 						xmlns="http://www.w3.org/2000/svg"
 						strokeLinecap="round"
-						className="absolute -right-12 md:-right-16 -top-16 w-24 md:w-auto"
+						className="absolute -right-12 md:-right-16 -top-16"
 					>
 						<motion.path
 							d="M141.976 153.696C132.424 162.097 117.542 165.109 99.2659 160.407C81.0779 155.729 61.1203 143.641 44.4166 124.647C27.7128 105.654 18.2742 84.3152 15.9576 65.6785C13.6298 46.9513 18.5187 32.5766 28.0713 24.1756C37.6239 15.7747 52.5054 12.7625 70.7817 17.464C88.9697 22.1428 108.927 34.2305 125.631 53.2241C142.335 72.2177 151.773 93.5562 154.09 112.193C156.418 130.92 151.529 145.295 141.976 153.696Z"
