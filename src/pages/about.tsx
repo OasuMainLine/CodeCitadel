@@ -45,16 +45,15 @@ const About = ({ html }: AboutProps) => {
 							stroke="#37AA78"
 							strokeWidth="33"
 							strokeLinecap="round"
-				 
 							transition={{
 								duration: 1.2,
-								delay: .4,
+								delay: 0.4,
 							}}
 							initial={{
 								pathLength: 0,
 								strokeWidth: 0,
 							}}
-							animate={{ pathLength: 1, strokeWidth: 33}}
+							animate={{ pathLength: 1, strokeWidth: 33 }}
 						/>
 					</motion.svg>
 
@@ -65,23 +64,20 @@ const About = ({ html }: AboutProps) => {
 						fill="none"
 						xmlns="http://www.w3.org/2000/svg"
 						strokeLinecap="round"
-                        className="absolute -right-12 md:-right-16 -top-16 w-24 md:w-auto"
+						className="absolute -right-12 md:-right-16 -top-16 w-24 md:w-auto"
 					>
 						<motion.path
 							d="M141.976 153.696C132.424 162.097 117.542 165.109 99.2659 160.407C81.0779 155.729 61.1203 143.641 44.4166 124.647C27.7128 105.654 18.2742 84.3152 15.9576 65.6785C13.6298 46.9513 18.5187 32.5766 28.0713 24.1756C37.6239 15.7747 52.5054 12.7625 70.7817 17.464C88.9697 22.1428 108.927 34.2305 125.631 53.2241C142.335 72.2177 151.773 93.5562 154.09 112.193C156.418 130.92 151.529 145.295 141.976 153.696Z"
 							stroke="#AA3737"
 							strokeWidth="29"
-							
-                            transition={{
+							transition={{
 								duration: 1.4,
-								delay: .3,
-								opacity: 0
+								delay: 0.3,
+								opacity: 0,
 							}}
-							
 							initial={{
 								pathLength: 0,
 								strokeWidth: 0,
-							 
 							}}
 							animate={{ pathLength: 1, strokeWidth: 29 }}
 						/>
@@ -89,10 +85,7 @@ const About = ({ html }: AboutProps) => {
 				</div>
 			</div>
 
-			<ReactMarkdown
-				className="mx-5 md:m-0 max-w-none prose-lg prose-headings:font-mono prose-p:font-medium prose-headings:font-bold prose-headings:text-4xl prose-white"
-			
-			>
+			<ReactMarkdown className="mx-5 md:m-0 max-w-none prose-lg prose-headings:font-mono prose-p:font-medium prose-headings:font-bold prose-headings:text-4xl prose-white">
 				{html}
 			</ReactMarkdown>
 		</div>

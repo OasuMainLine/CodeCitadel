@@ -50,7 +50,7 @@ module.exports = {
 				},
 			}),
 			fontFamily: {
-				mono: ["alma-mono", ...fontFamily.mono],
+				mono: ["var(--font-almamono)", ...fontFamily.mono],
 				sans: ["var(--font-quicksand)", ...fontFamily.sans],
 			},
 			colors: {
