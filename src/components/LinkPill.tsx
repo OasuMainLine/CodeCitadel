@@ -28,6 +28,6 @@ export default function LinkPill({type=LinkPillType.DEFAULT, to, children}: Link
     }
 
     return (
-    <motion.div whileHover={{scale: 1.2}} className={`w-[17.75rem] transition-colors h-10 flex items-center justify-center font-mono text-base underline border-2 rounded-[11px] ${border} ${background}`}>{children}</motion.div>
+    <motion.div whileHover={{scale: 1.2}} className={`w-screen md:w-[20vw] max-w-[17.75rem] transition-colors h-10 flex items-center justify-center font-mono text-base underline border-2 rounded-[11px] ${border} ${background}`}>{children}</motion.div>
   )
 }

@@ -1,23 +1,26 @@
 export enum CategoryType {
-    WEB, BACKEND, OTHER
+	WEB,
+	BACKEND,
+	OTHER,
 }
 
 export type Category = {
-    name: string,
-    type: CategoryType
-}
+	name: string;
+	type: CategoryType;
+};
 
 export type Post = {
-    slug: string,
-    title: string,
-    categories: Category[],
-    date: Date,
-    summary: string,
-    content?: string,
-}
- 
+	slug: string;
+	title: string;
+	categories: Category[];
+	date: Date;
+	summary: string;
+	image?: string;
+	content?: string;
+};
+
 export type Search = {
-    slug: string,
-    title: string,
-    date: Date,
-}
+	slug: string;
+	title: string;
+	date: Date;
+};

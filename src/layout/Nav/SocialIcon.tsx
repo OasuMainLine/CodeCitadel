@@ -17,9 +17,9 @@ const LINKS = {
 	[Icon.GMAIL]: "https://www.gmail.com",
 };
 const ICONS = {
-	[Icon.INSTAGRAM]: "/icons/icon=instagram.png",
-	[Icon.LINKENDL]: "/icons/icon=Linkendl.png",
-	[Icon.GMAIL]: "/icons/icon=email.png",
+	[Icon.INSTAGRAM]: "/icons/icon_instagram.png",
+	[Icon.LINKENDL]: "/icons/icon_linkendl.png",
+	[Icon.GMAIL]: "/icons/icon_email.png",
 };
 export default function SocialIcon({ icon }: SocialIconProps) {
 	return (

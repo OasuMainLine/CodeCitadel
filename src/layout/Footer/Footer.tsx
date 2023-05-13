@@ -5,7 +5,7 @@ import NavItem from "../Nav/NavItem";
 import SocialIcon, { Icon } from '../Nav/SocialIcon';
 export default function Footer() {
   return (
-    <div className='w-screen h-fit md:h-52 bg-white grid grid-rows-[60%_40%]'>
+    <div className='w-full h-fit md:h-52 bg-white grid grid-rows-[60%_40%]'>
       <div className='bg-footerBlue w-full h-full flex px-4 md:px-36 items-center gap-8 flex-col md:flex-row md:gap-0 py-10'>
         <div className="w-[12rem] h-60 md:w-[12.875rem] md:h-[5.25rem] relative aspect-video">
           <Link href="/">

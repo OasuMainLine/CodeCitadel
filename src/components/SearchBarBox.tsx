@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
-import { _formatDate, _generatePost, _getSearches, _slug } from '../../lib/clientUtils'
+import { _formatDate, _generatePost, _getPostURL, _getSearches, _slug } from '../../lib/clientUtils'
 import { Post, Search } from '../../lib/types'
 import { getPosts } from '../../lib/utils'
 
@@ -20,7 +20,7 @@ function SearchBoxItem({search, onClick}: SearchBoxItemProps){
 
     const formattedDate = _formatDate(search.date);
     return <li className='px-4 font-mono flex flex-col bg-dark' onClick={onClick}>
-        <Link href={"/" + search.slug}>
+        <Link href={_getPostURL(search.slug)}>
             <p>{search.title}</p>
             <p className='text-iGray'>{formattedDate}</p>
         </Link>

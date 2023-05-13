@@ -70,3 +70,8 @@ export function _getSearches(): Search[]{
     })
     return searches;
 }
+export function _getPostURL(slug: string): string{
+    return `/blog/${slug}`;
+}
+
+
