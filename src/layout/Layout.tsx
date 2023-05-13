@@ -9,9 +9,12 @@ type LayoutProps = {
 
 export default function Layout({ children }: LayoutProps) {
 	return (
-		<div className="min-h-screen max-w-full bg-dark grid grid-rows-[max-content_1fr_max-content] text-iWhite overflow-hidden">
+		<div
+			id="default-layout"
+			className="min-h-screen max-w-full bg-dark grid grid-rows-[max-content_1fr_max-content] text-iWhite overflow-hidden"
+		>
 			<Nav />
-		  {children}
+			{children}
 			<Footer />
 		</div>
 	);
