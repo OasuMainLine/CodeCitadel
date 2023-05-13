@@ -1,13 +1,19 @@
 import SearchBar from "@/components/SearchBar";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import NavItem from "./NavItem";
 import SocialIcon, { Icon } from "./SocialIcon";
 
 export default function Nav() {
 	const [showBarBox, setShowBarBox] = useState(false);
 	const [showMobile, setShowMobile] = useState(false);
+
+	useEffect(() => {
+		document
+			.querySelector("#default-layout")
+			?.addEventListener("click", () => setShowBarBox(false));
+	}, []);
 	return (
 		<div className="h-[9.5625rem] w-screen max-w-full shadow-nav flex px-4 md:px-[4rem] 2xl:px-24 items-center">
 			<div className="w-[12.875rem] h-fit relative">
@@ -98,12 +104,9 @@ export default function Nav() {
 				showBox={showBarBox}
 				placeholder="Start learning"
 				containerClassName="ml-auto hidden md:flex"
-				onFocus={() => setShowBarBox(true)}
+				onClick={() => setShowBarBox(true)}
 			/>
-			<div
-				className={`overlay fixed w-screen h-screen top-0 left-0 `}
-				onClick={() => setShowBarBox(false)}
-			></div>
+
 			<ul className="md:flex gap-2 ml-10 hidden">
 				<li>
 					<SocialIcon icon={Icon.LINKENDL} />
