@@ -81,14 +81,15 @@ const almaMono = localFont({
 
 export default function App({ Component, pageProps }: AppPropsWithLayout) {
 	const getLayout = Component.getLayout ?? ((page) => <Layout>{page}</Layout>);
-	return (
-		<PostsContexts>
-			<div className={`${quicksand.variable} ${almaMono.variable} font-sans `}>
-				<DefaultHead title={Component.displayName} />
-				{getLayout(<Component {...pageProps} />)}
-
-				<Analytics />
-			</div>
+	return (<>
+		
+			<PostsContexts>
+				<div className={`${quicksand.variable} ${almaMono.variable} font-sans `}>
+					<DefaultHead title={Component.displayName} />
+					{getLayout(<Component {...pageProps} />)}
+				</div>
 		</PostsContexts>
+		<Analytics />
+	</>
 	);
 }
