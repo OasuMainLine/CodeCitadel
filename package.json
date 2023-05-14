@@ -4,8 +4,8 @@
 	"private": true,
 	"scripts": {
 		"dev": "next dev",
-		"build": "npm run prebuild && next build",
-		"prebuild": "ts-node ./lib/prebuild.mjs",
+		"build": "next build",
+ 
 		"start": "next start",
 		"lint": "next lint"
 	},
