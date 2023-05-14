@@ -143,7 +143,7 @@ const Entry = ({ postJSON }: EntryProps) => {
 					</svg>
 				</motion.button>
 				<article
-					className="mx-5 overflow-auto md:overflow-visible md:mx-auto max-w-3xl mb-12 
+					className="mx-5 md:overflow-visible md:mx-auto max-w-3xl mb-12 
 				mt-10 prose-sm md:prose-lg prose-ol:list-decimal prose-headings:font-mono 
 				prose-p:font-medium prose-headings:font-bold dark:prose-invert prose-pre:p-0
 				prose-pre:bg-none prose-a:text-secondary prose-a:font-semibold 

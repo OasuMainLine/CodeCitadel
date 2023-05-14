@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
- 
-
 @layer utilities {
 	.custom-scroll::-webkit-scrollbar,
 	.custom-scroll > div::-webkit-scrollbar {
@@ -129,4 +127,8 @@
 			border: none;
 		}
 	}
+}
+
+.math {
+	overflow: auto;
 }
