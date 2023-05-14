@@ -57,7 +57,7 @@ const Home = ({ postsJSON }: HomeProps) => {
 			<span className="h-[.2px] w-full bg-iWhite block" />
 			<div className="flex flex-col pt-10 items-center md:items-start gap-2 md:gap-0">
 				<h2 className="text-2xl mb-7 font-mono">Recent posts</h2>
-				<div className="flex flex-col gap-10 md:gap-8">
+				<div className="flex flex-col gap-10 md:gap-12">
 					{posts.slice(0, 4).map((post) => (
 						<PostCard key={post.slug} post={post} />
 					))}
