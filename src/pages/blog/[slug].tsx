@@ -1,6 +1,6 @@
 import { GetStaticPaths } from "next";
 import { GetStaticProps } from "next";
-import { getPostBySlug, getPostsPaths } from "../../../lib/utils";
+import { getPostBySlug, getPostsPaths, writeSearches } from "../../../lib/api";
 import {
 	_deserializePosts,
 	_formatDate,
@@ -30,6 +30,7 @@ import { rehypeFigure } from "../../../lib/rehypeFigure";
 
 export const getStaticPaths: GetStaticPaths = async (ctx) => {
 	const paths = await getPostsPaths();
+	await writeSearches();
 
 	const slugs = paths.map((path) => {
 		return {

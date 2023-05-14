@@ -10,7 +10,7 @@ import {
 	_sliceArray,
 } from "../../lib/clientUtils";
 import { Category, Post } from "../../lib/types";
-import { getCategories, getPosts } from "../../lib/utils";
+import { getCategories, getPosts } from "../../lib/api";
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
 	let posts: Post[] = await getPosts();
