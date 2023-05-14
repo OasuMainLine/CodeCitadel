@@ -35,7 +35,7 @@ export const CodeComponent = ({
 			<ClipboardButton targetText={childrenStr} />
 			<SyntaxHighlighter
 				{...props}
-				children={childrenStr.replace(/\n$/, "")}
+				children={childrenStr.replace(/\n$/, "")} // eslint-disable-line
 				style={CodeTheme}
 				language={match[1]}
 				PreTag="div"
