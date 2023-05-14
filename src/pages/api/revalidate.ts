@@ -16,7 +16,7 @@ export default async function handler(
 		return res
 			.status(401)
 			.json({ message: "x-vercel-reval-key header not defined" });
-	} else if (inboundRevalToken !== process.env.CF_REVALIDATE_SECRET) {
+	} else if (inboundRevalToken !== process.env.CF_REVALIDATE_KEY) {
 		return res.status(401).json({ message: "Invalid token" });
 	}
 
