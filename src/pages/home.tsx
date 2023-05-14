@@ -9,16 +9,14 @@ import {
 } from "../../lib/clientUtils";
 
 import { GetStaticProps } from "next";
-import { getPosts } from "../../lib/utils";
 
+import { getPosts } from "../../lib/api";
 export const getStaticProps: GetStaticProps = async (ctx) => {
 	let posts: Post[] = await getPosts();
-
 	return {
 		props: {
 			postsJSON: _serializePosts(posts),
 		},
-
 	};
 };
 
@@ -37,8 +35,9 @@ const Home = ({ postsJSON }: HomeProps) => {
 					<span className="text-secondary font-bold">fingertips</span>
 				</h1>
 				<div className="flex flex-col md:ml-auto md:items-center">
-
-					<h2 className="font-mono text-xxl mb-3 text-center md:text-left px-2 md:px-0 mt-3 md:mt-0">A glimpse of what I write about</h2>
+					<h2 className="font-mono text-xxl mb-3 text-center md:text-left px-2 md:px-0 mt-3 md:mt-0">
+						A glimpse of what I write about
+					</h2>
 					<div className="grid md:grid-cols-2 mt-5 gap-x-10 gap-y-5 place-content-center md:place-content-start">
 						<LinkPill to="">Javascript</LinkPill>
 						<LinkPill to="" type={LinkPillType.SECONDARY}>
