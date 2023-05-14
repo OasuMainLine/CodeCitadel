@@ -23,7 +23,7 @@ const About = ({ html }: AboutProps) => {
 			<div className="flex flex-col gap-10 mb-10 md:mb-0 md:gap-0 md:flex-row justify-between items-center">
 				<h1 className="text-5xl text-center md:text-left md:text-6xl font-mono">
 					<span className="text-alt font-bold">Hello!</span> <br />
-					I'm&nbsp;
+					I&apos;m&nbsp;
 					<span className="text-secondary font-bold">Orlando!</span>
 				</h1>
 				<div className="relative w-fit h-fit scale-75 md:transform-none">
