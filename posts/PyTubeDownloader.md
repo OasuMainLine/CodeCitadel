@@ -176,7 +176,7 @@ And that's about it! You can go ahead and add more functionalities, like a progr
 
 ## Troubleshooting
 
-If you had a `KeyError: 'streamingData'` when downloading the video, that could mean that the pytube library is not up-to-date, you can fix it by donwloading it right from the git repository, like so:
+If you had a `KeyError: 'streamingData'` when downloading the video, that could mean that the pytube library is not up-to-date, you can fix it by fetching it right from the git repository, like so:
 
 ```bash
 //filename: terminal
