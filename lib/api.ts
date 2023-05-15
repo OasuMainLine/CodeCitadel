@@ -2,9 +2,12 @@ import { writeFileSync } from "fs";
 import { json } from "stream/consumers";
 import { Category, CategoryType, Post, Search } from "./types";
 
+const preview = (process.env.CF_PREVIEW || "0") == "1" ? true : false;
+
+const _preview = () => (preview ? "true" : "false");
 const GET_ALL_POSTS_QUERY = `
 query {
-    postCollection {
+    postCollection(preview:${_preview()}) {
       items {
         slug
         title
@@ -27,7 +30,7 @@ query {
 
 const GET_POST_BY_SLUG_QUERY = `
 query {
-    postCollection(where: { slug: "_slug_" }, limit: 1) {
+    postCollection(where: { slug: "_slug_" }, limit: 1, preview:${_preview()}) {
       items {
         slug
         title
@@ -50,7 +53,7 @@ query {
 
 const GET_CATEGORIES_QUERY = `
 query {
-	categoryCollection {
+	categoryCollection(preview:${_preview()}){
     items{
       name
       type
@@ -61,7 +64,7 @@ query {
 
 const GET_PATHS_QUERY = `
 query postEntryQuery {
-	postCollection {
+	postCollection(preview:${_preview()}) {
     items{
       slug
     }
@@ -70,7 +73,7 @@ query postEntryQuery {
 `;
 const GET_SEARCHES_QUERY = `
 query {
-    postCollection {
+    postCollection(preview:${_preview()}) {
       items {
         slug,
         date,
@@ -89,7 +92,7 @@ async function gqFetch<T = any>(graphql: string) {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",
-			Authorization: `Bearer ${process.env.CF_DELIVERY_TOKEN || ""}`,
+			Authorization: `Bearer ${preview ? process.env.CF_PREVIEW_TOKEN : process.env.CF_DELIVERY_TOKEN}`,
 		},
 		body: JSON.stringify({ query: graphql }),
 	});

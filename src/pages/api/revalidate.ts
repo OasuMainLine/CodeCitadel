@@ -1,4 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
+import { json } from "stream/consumers";
 import { writeSearches } from "../../../lib/api";
 
 type Data = {
@@ -26,14 +27,17 @@ export default async function handler(
 		let postSlug = req.body.fields.slug["en-US"];
 
 		// revalidate the individual post and the home page
+
 		await res.revalidate(`/blog/${postSlug}`);
-		await res.revalidate("/");
 		await res.revalidate("/blog");
+		await res.revalidate("/");
+
 		await writeSearches();
 		return res.json({ revalidated: true });
 	} catch (err) {
 		// If there was an error, Next.js will continue
 		// to show the last successfully generated page
+		console.log(err);
 		return res
 			.status(500)
 			.send({ message: "Error revalidating", revalidated: false });
