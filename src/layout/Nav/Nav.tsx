@@ -17,7 +17,7 @@ export default function Nav() {
 	return (
 		<div className="h-[9.5625rem] w-screen max-w-full shadow-nav flex px-4 md:px-[4rem] 2xl:px-24 items-center">
 			<div className="w-[12.875rem] h-fit relative">
-				<Link href="/home">
+				<Link href="/">
 					<Image
 						src="/logo.png"
 						alt="Code Citadel Logo"
@@ -68,7 +68,7 @@ export default function Nav() {
 				</button>
 				<NavItem
 					onClick={() => setShowMobile(false)}
-					to="/home"
+					to="/"
 					textSize="text-4xl md:text-2xl"
 				>
 					Home

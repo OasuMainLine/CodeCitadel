@@ -18,8 +18,8 @@ export default function Footer() {
 					</Link>
 				</div>
 
-				<ul className="flex gap-2 md:gap-8 md:mx-auto md:flex-row flex-col">
-					<NavItem to="/home" textSize="text-2xl md:text-xl">
+				<ul className="flex gap-2 md:gap-8 text-center md:text-left md:mx-auto md:flex-row flex-col">
+					<NavItem to="/" textSize="text-2xl md:text-xl">
 						Home
 					</NavItem>
 					<NavItem to="/about" textSize="text-2xl md:text-xl">
