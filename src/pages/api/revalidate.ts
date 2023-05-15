@@ -1,5 +1,4 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { json } from "stream/consumers";
 import { writeSearches } from "../../../lib/api";
 
 type Data = {
@@ -40,6 +39,6 @@ export default async function handler(
 		console.log(err);
 		return res
 			.status(500)
-			.send({ message: "Error revalidating", revalidated: false });
+			.send({ message: "Error revalidating\n" + err, revalidated: false });
 	}
 }
