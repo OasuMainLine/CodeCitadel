@@ -23,7 +23,15 @@ export default function DefaultHead({ title }: HeadProps) {
 					name="description"
 					content="This blog is aimed to programmers and computer science enthuasiasts"
 				/>
-				<meta property="og:image" content="https://thecodecitadel.com/public/logo.png" />
+				<meta
+					property="og:description"
+					content="This blog is aimed to programmers and computer science enthuasiasts"
+				/>
+				<meta property="og:title" content="The code citadel" />
+				<meta
+					property="og:image"
+					content="https://images.ctfassets.net/ksv4rmm9mbeg/1BEHRTfOnKiNdv5aae8zc0/f40cccbe8127522bdcb16cb873aaa815/CodeCitadel.svg"
+				/>
 				<meta property="og:url" content="https://thecodecitadel.com/home" />
 			</Head>
 		</>
