@@ -97,13 +97,13 @@ const Entry = ({ postJSON }: EntryProps) => {
 				<meta property="og:image" content={post.image || "/images/logo.png"} />
 				<meta property="og:type" content="article" />
 				<meta property="og:site_name" content="The Code Citadel" />
-				<meta name="twitter:card" content="summary" />
-				<meta name="twitter:title" content={post.title} />
-				<meta name="twitter:image" content={post.image || ""} />
-				<meta name="twitter:description" content={post.summary} />
+				<meta property="twitter:card" content={post.summary} />
+				<meta property="twitter:title" content={post.title} />
+				<meta property="twitter:image" content={post.image || ""} />
+				<meta property="twitter:description" content={post.summary} />
 				<meta
-					name="twitter:url"
-					content={"https://thecodecitadel.com/" + post.slug}
+					property="twitter:url"
+					content={"https://thecodecitadel.com/blog/" + post.slug}
 				/>
 			</Head>
 			<div className="w-screen h-full relative">

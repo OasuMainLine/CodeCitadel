@@ -32,7 +32,7 @@ export default function DefaultHead({ title }: HeadProps) {
 					property="og:image"
 					content="https://images.ctfassets.net/ksv4rmm9mbeg/1BEHRTfOnKiNdv5aae8zc0/f40cccbe8127522bdcb16cb873aaa815/CodeCitadel.svg"
 				/>
-				<meta property="og:url" content="https://thecodecitadel.com/home" />
+				<meta property="og:url" content="https://thecodecitadel.com/" />
 			</Head>
 		</>
 	);
