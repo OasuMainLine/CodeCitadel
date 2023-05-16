@@ -1,10 +1,11 @@
-import { writeFileSync } from "fs";
-import { json } from "stream/consumers";
 import { Category, CategoryType, Post, Search } from "./types";
-
+import { createClient } from "contentful-management";
 const preview = (process.env.CF_PREVIEW || "0") == "1" ? true : false;
 
 const _preview = () => (preview ? "true" : "false");
+const contentfulClient = createClient({
+	accessToken: process.env.CF_CONTENT_TOKEN || "",
+});
 const GET_ALL_POSTS_QUERY = `
 query {
     postCollection(preview:${_preview()}) {
@@ -92,7 +93,9 @@ async function gqFetch<T = any>(graphql: string) {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",
-			Authorization: `Bearer ${preview ? process.env.CF_PREVIEW_TOKEN : process.env.CF_DELIVERY_TOKEN}`,
+			Authorization: `Bearer ${
+				preview ? process.env.CF_PREVIEW_TOKEN : process.env.CF_DELIVERY_TOKEN
+			}`,
 		},
 		body: JSON.stringify({ query: graphql }),
 	});
@@ -274,5 +277,38 @@ export async function getSearches(): Promise<Search[]> {
 export async function writeSearches() {
 	const searches = await getSearches();
 
-	writeFileSync("./lib/searches.json", JSON.stringify(searches));
+	const json = JSON.stringify(searches);
+
+	try {
+		const space = await contentfulClient.getSpace(
+			process.env.CF_SPACE_ID || ""
+		);
+		const environment = await space.getEnvironment("master");
+
+		const asset = await environment.getAsset(process.env.CF_JSON_FILE || "");
+		const upload = await environment.createUpload({ file: json });
+
+		asset.fields.file["en-US"] = {
+			fileName: "search.json",
+			contentType: "application/json",
+			uploadFrom: {
+				sys: {
+					type: "Link",
+					id: upload.sys.id,
+					linkType: "Upload",
+				},
+			},
+		};
+
+		asset.fields.title["en-US"] = "searches";
+		const publishedAsset = await asset
+			.update()
+			.then((asset) => asset.processForLocale("en-US"))
+			.then((asset) => asset.publish());
+
+		console.log("El archivo de busquedas se actualizó con éxito");
+	} catch (err) {
+		console.log(err);
+		console.log("Error al actualizar las busquedas");
+	}
 }
