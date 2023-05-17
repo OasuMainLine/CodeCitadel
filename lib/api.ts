@@ -8,7 +8,7 @@ const contentfulClient = createClient({
 });
 const GET_ALL_POSTS_QUERY = `
 query {
-    postCollection(preview:${_preview()}) {
+    postCollection(preview:${_preview()}, order:date_DESC) {
       items {
         slug
         title

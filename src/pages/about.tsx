@@ -19,7 +19,7 @@ type AboutProps = {
 
 const About = ({ html }: AboutProps) => {
 	return (
-		<div className="w-full h-full md:px-[13.25rem] py-12 2xl:py-16">
+		<div className="w-full h-full portrait:px-2 md:px-[13.25rem] py-12 2xl:py-16">
 			<div className="flex flex-col portrait:flex-col gap-10 mb-10 md:mb-0 md:gap-0 md:flex-row justify-between items-center">
 				<h1 className="text-5xl text-center portrait:text-center md:text-left md:text-6xl font-mono">
 					<span className="text-alt font-bold">Hello!</span> <br />
