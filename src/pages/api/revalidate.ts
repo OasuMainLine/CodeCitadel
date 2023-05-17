@@ -23,6 +23,11 @@ export default async function handler(
 	try {
 		// Note: if this fails to parse you may have forget to set the
 		// "content-type" header correctly as mentioned here https://github.com/vercel/next.js/blob/canary/examples/cms-contentful/README.md#step-9-try-using-on-demand-revalidation
+		if (!req.body.fields.slug) {
+			return res
+				.status(400)
+				.json({ message: "Invalid webhook call\nNo slug in request" });
+		}
 		let postSlug = req.body.fields.slug["en-US"];
 
 		// revalidate the individual post and the home page
@@ -38,6 +43,6 @@ export default async function handler(
 		console.log(err);
 		return res
 			.status(500)
-			.send({ message: "Error revalidating\n" + err, revalidated: false });
+			.send({ message: "Error revalidating", revalidated: false });
 	}
 }

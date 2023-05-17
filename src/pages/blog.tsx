@@ -53,12 +53,12 @@ const Blog = ({ postsJSON, categories }: BlogProps) => {
 		);
 	}
 	return (
-		<div className="w-full h-full md:px-56 py-12 2xl:px-60">
+		<div className="w-full h-full portrait:px-5 md:px-56 py-12 2xl:px-60">
 			<div className="flex flex-col gap-3">
 				{_sliceArray(categories, 6).map((categoryRow, idx) => (
 					<div
 						key={idx}
-						className="grid grid-cols-2 w-3/4 mx-auto md:mx-0 md:w-auto md:flex gap-y-3 gap-x-4 md:gap-3"
+						className="grid grid-cols-2 w-3/4 mx-auto portrait:mx-auto md:mx-0 md:w-auto md:flex gap-y-3 gap-x-4 md:gap-3"
 					>
 						{categoryRow.map((category, idx) => (
 							<Pill
@@ -72,7 +72,7 @@ const Blog = ({ postsJSON, categories }: BlogProps) => {
 				))}
 			</div>
 
-			<div className="flex flex-col gap-8 mt-10 items-center md:items-start min-h-screen">
+			<div className="flex flex-col gap-8 mt-10 items-center portrait:items-center md:items-start min-h-screen">
 				{filteredPosts.length > 0 &&
 					filteredPosts.map((post) => <PostCard key={post.slug} post={post} />)}
 

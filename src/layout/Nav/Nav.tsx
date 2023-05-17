@@ -103,7 +103,7 @@ export default function Nav() {
 				setShowBox={setShowBarBox}
 				showBox={showBarBox}
 				placeholder="Start learning"
-				containerClassName="ml-auto hidden md:flex"
+				containerClassName="ml-auto hidden portrait:hidden md:flex"
 				onClick={() => setShowBarBox(true)}
 			/>
 

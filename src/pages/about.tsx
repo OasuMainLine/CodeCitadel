@@ -20,13 +20,13 @@ type AboutProps = {
 const About = ({ html }: AboutProps) => {
 	return (
 		<div className="w-full h-full md:px-[13.25rem] py-12 2xl:py-16">
-			<div className="flex flex-col gap-10 mb-10 md:mb-0 md:gap-0 md:flex-row justify-between items-center">
-				<h1 className="text-5xl text-center md:text-left md:text-6xl font-mono">
+			<div className="flex flex-col portrait:flex-col gap-10 mb-10 md:mb-0 md:gap-0 md:flex-row justify-between items-center">
+				<h1 className="text-5xl text-center portrait:text-center md:text-left md:text-6xl font-mono">
 					<span className="text-alt font-bold">Hello!</span> <br />
 					I&apos;m&nbsp;
 					<span className="text-secondary font-bold">Orlando!</span>
 				</h1>
-				<div className="relative w-fit h-fit scale-75 md:transform-none">
+				<div className="relative w-fit h-fit scale-75 portrait:scale-75 md:transform-none">
 					<Image
 						alt="A photo of me! The author of the page"
 						src={MyImage}

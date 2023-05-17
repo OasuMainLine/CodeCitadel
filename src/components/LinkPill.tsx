@@ -33,7 +33,7 @@ export default function LinkPill({
 	return (
 		<motion.div
 			whileHover={{ scale: 1.2 }}
-			className={`w-screen md:w-[20vw] max-w-[17.75rem] overflow-visible transition-colors h-10 flex items-center justify-center font-mono text-base border-2 rounded-[11px] ${border} ${background}`}
+			className={`w-screen md:w-[20vw] portrait:w-[15vw] max-w-[17.75rem] overflow-visible transition-colors h-10 flex items-center justify-center font-mono text-base border-2 rounded-[11px] ${border} ${background}`}
 		>
 			{children}
 		</motion.div>
