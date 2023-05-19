@@ -8,9 +8,9 @@ export default function NotFound() {
 				<title>Not Found | Code Citadel</title>
 			</Head>
 			<div className="mx-auto py-20">
-				<h1 className="font-mono text-3xl text-center">
+				<h1 className="text-center font-mono text-3xl">
 					{" "}
-					<span className="text-alt font-bold">404 CODE !!!</span> <br />
+					<span className="font-bold text-alt">404 CODE !!!</span> <br />
 					The requested page don&apos;t exist
 				</h1>
 			</div>

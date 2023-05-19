@@ -19,20 +19,20 @@ type AboutProps = {
 
 const About = ({ html }: AboutProps) => {
 	return (
-		<div className="w-full h-full portrait:px-2 md:px-[13.25rem] py-12 2xl:py-16">
-			<div className="flex flex-col portrait:flex-col gap-10 mb-10 md:mb-0 md:gap-0 md:flex-row justify-between items-center">
-				<h1 className="text-5xl text-center portrait:text-center md:text-left md:text-6xl font-mono">
-					<span className="text-alt font-bold">Hello!</span> <br />
+		<div className="h-full w-full py-12 md:px-[13.25rem] 2xl:py-16 portrait:px-2">
+			<div className="mb-10 flex flex-col items-center justify-between gap-10 md:mb-0 md:flex-row md:gap-0 portrait:flex-col">
+				<h1 className="text-center font-mono text-5xl md:text-left md:text-6xl portrait:text-center">
+					<span className="font-bold text-alt">Hello!</span> <br />
 					I&apos;m&nbsp;
-					<span className="text-secondary font-bold">Orlando!</span>
+					<span className="font-bold text-secondary">Orlando!</span>
 				</h1>
-				<div className="relative w-fit h-fit scale-75 portrait:scale-75 md:transform-none">
+				<div className="relative h-fit w-fit scale-75 md:transform-none portrait:scale-75">
 					<Image
 						alt="A photo of me! The author of the page"
 						src={MyImage}
 						width={421}
 						height={468}
-						className="rounded-tl-[80px] rounded-br-[80px] md:rounded-tl-[120px] md:rounded-br-[120px]"
+						className="rounded-br-[80px] rounded-tl-[80px] md:rounded-br-[120px] md:rounded-tl-[120px]"
 					/>
 					<motion.svg
 						width="293"
@@ -66,7 +66,7 @@ const About = ({ html }: AboutProps) => {
 						fill="none"
 						xmlns="http://www.w3.org/2000/svg"
 						strokeLinecap="round"
-						className="absolute -right-12 md:-right-16 -top-16"
+						className="absolute -right-12 -top-16 md:-right-16"
 					>
 						<motion.path
 							d="M141.976 153.696C132.424 162.097 117.542 165.109 99.2659 160.407C81.0779 155.729 61.1203 143.641 44.4166 124.647C27.7128 105.654 18.2742 84.3152 15.9576 65.6785C13.6298 46.9513 18.5187 32.5766 28.0713 24.1756C37.6239 15.7747 52.5054 12.7625 70.7817 17.464C88.9697 22.1428 108.927 34.2305 125.631 53.2241C142.335 72.2177 151.773 93.5562 154.09 112.193C156.418 130.92 151.529 145.295 141.976 153.696Z"
@@ -87,7 +87,7 @@ const About = ({ html }: AboutProps) => {
 				</div>
 			</div>
 
-			<ReactMarkdown className="mx-5 md:m-0 max-w-none prose-lg prose-headings:font-mono prose-p:font-medium prose-headings:font-bold prose-headings:text-4xl prose-white">
+			<ReactMarkdown className="prose-lg prose-white mx-5 max-w-none prose-headings:font-mono prose-headings:text-4xl prose-headings:font-bold prose-p:font-medium md:m-0">
 				{html}
 			</ReactMarkdown>
 		</div>

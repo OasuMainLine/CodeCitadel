@@ -1,12 +1,12 @@
-import React from 'react'
+import React from "react";
 
 type BackdropProps = {
-    show: boolean,
-    setShow: React.Dispatch<boolean>
-}
+	show: boolean;
+	setShow: React.Dispatch<boolean>;
+};
 
-export default function Backdrop({show,setShow}: BackdropProps) {
-  return (
-    <div className='bg-black opacity-40 fixed top-0 left-0 w-full h-full'></div>
-  )
+export default function Backdrop({ show, setShow }: BackdropProps) {
+	return (
+		<div className="fixed left-0 top-0 h-full w-full bg-black opacity-40"></div>
+	);
 }

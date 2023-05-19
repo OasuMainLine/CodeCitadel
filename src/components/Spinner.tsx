@@ -1,16 +1,19 @@
 import React from "react";
 
-
 type SpinnerProps = {
-    bgWidth?: number | `${number}`,
-    bgHeight?: number | `${number}`,
-}
+	bgWidth?: number | `${number}`;
+	bgHeight?: number | `${number}`;
+};
 export default function Spinner(props: SpinnerProps) {
 	return (
-		<div role="status" className="min-w-fit min-h-fit grid place-items-center" style={{width: props.bgWidth, height: props.bgHeight}}>
+		<div
+			role="status"
+			className="grid min-h-fit min-w-fit place-items-center"
+			style={{ width: props.bgWidth, height: props.bgHeight }}
+		>
 			<svg
 				aria-hidden="true"
-				className="w-32 h-32 mr-2 animate-spin text-gray-700 fill-white"
+				className="mr-2 h-32 w-32 animate-spin fill-white text-gray-700"
 				viewBox="0 0 100 101"
 				fill="none"
 				xmlns="http://www.w3.org/2000/svg"

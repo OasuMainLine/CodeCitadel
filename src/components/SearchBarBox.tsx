@@ -23,7 +23,7 @@ type SearchBoxItemProps = {
 function SearchBoxItem({ search, onClick }: SearchBoxItemProps) {
 	const formattedDate = _formatDate(search.date);
 	return (
-		<li className="px-4 font-mono flex flex-col bg-dark" onClick={onClick}>
+		<li className="flex flex-col bg-dark px-4 font-mono" onClick={onClick}>
 			<Link href={_getPostURL(search.slug)}>
 				<p>{search.title}</p>
 				<p className="text-iGray">{formattedDate}</p>
@@ -62,7 +62,7 @@ export default function SearchBarBox({
 		return null;
 	}
 	return (
-		<ul className="absolute top-[103%] left-0 bg-dark shadow-search-box z-50 pt-2 flex flex-col gap-4 pb-5 w-full">
+		<ul className="absolute left-0 top-[103%] z-50 flex w-full flex-col gap-4 bg-dark pb-5 pt-2 shadow-search-box">
 			{results.slice(0, 3).map((searchItem) => (
 				<SearchBoxItem
 					key={_slug(searchItem.title) + "-Search"}

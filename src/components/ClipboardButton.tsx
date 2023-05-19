@@ -25,7 +25,7 @@ export default function ClipboardButton({ targetText }: ClipboardButtonProps) {
 	}, []);
 	return (
 		<button
-			className="absolute bg-slate-600 top-2 right-5 px-4 py-1 rounded-md flex items-center z-40 gap-2 not-prose"
+			className="not-prose absolute right-5 top-2 z-40 flex items-center gap-2 rounded-md bg-slate-600 px-4 py-1"
 			onClick={onCopy}
 		>
 			<motion.svg
@@ -34,7 +34,7 @@ export default function ClipboardButton({ targetText }: ClipboardButtonProps) {
 				viewBox="0 0 24 24"
 				strokeWidth={1.5}
 				stroke="currentColor"
-				className="w-6 h-6"
+				className="h-6 w-6"
 			>
 				<AnimatePresence mode="wait">
 					{showCopied && (
