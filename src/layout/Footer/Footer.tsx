@@ -5,9 +5,9 @@ import NavItem from "../Nav/NavItem";
 import SocialIcon, { Icon } from "../Nav/SocialIcon";
 export default function Footer() {
 	return (
-		<div className="w-full h-fit md:h-52 bg-white grid grid-rows-[60%_40%]">
-			<div className="bg-footerBlue w-full h-full flex px-4 portrait:px-6 md:px-36 items-center gap-8 flex-col md:flex-row md:gap-0 py-10">
-				<div className="w-[12rem] h-60 md:w-[12.875rem] md:h-[5.25rem] relative aspect-video">
+		<div className="grid h-fit w-full grid-rows-[60%_40%] bg-white md:h-52">
+			<div className="flex h-full w-full flex-col items-center gap-8 bg-footerBlue px-4 py-10 md:flex-row md:gap-0 md:px-36 portrait:px-6">
+				<div className="relative aspect-video h-60 w-[12rem] md:h-[5.25rem] md:w-[12.875rem]">
 					<Link href="/">
 						<Image
 							src="/logo.png"
@@ -18,7 +18,7 @@ export default function Footer() {
 					</Link>
 				</div>
 
-				<ul className="flex gap-2 md:gap-8 text-center md:text-left md:mx-auto md:flex-row flex-col">
+				<ul className="flex flex-col gap-2 text-center md:mx-auto md:flex-row md:gap-8 md:text-left">
 					<NavItem to="/" textSize="text-2xl md:text-xl">
 						Home
 					</NavItem>
@@ -39,11 +39,11 @@ export default function Footer() {
 					</li>
 				</ul>
 			</div>
-			<div className="bg-footerLightBlue w-full h-full px-4 md:px-36 flex items-center justify-between">
-				<p className="text-center text-base font-sans font-bold">
-					This website was programmed and <br /> designed by me
+			<div className="flex h-full w-full items-center justify-between bg-footerLightBlue px-4 md:px-36">
+				<p className="text-center font-sans text-base font-bold">
+					This website was programmed and <br /> designed by Orlando Sandi
 				</p>
-				<p className="text-center text-base font-sans font-bold">
+				<p className="text-center font-sans text-base font-bold">
 					©2023 CodeCitadel
 					<br />
 					All Rights Reserved

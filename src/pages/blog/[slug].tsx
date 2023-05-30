@@ -104,7 +104,7 @@ const Entry = ({ postJSON }: EntryProps) => {
 					content={"https://thecodecitadel.com/blog/" + post.slug}
 				/>
 			</Head>
-			<div className="w-screen h-full relative">
+			<div className="relative h-full w-screen">
 				<motion.button
 					initial="hidden"
 					animate={controls}
@@ -123,7 +123,7 @@ const Entry = ({ postJSON }: EntryProps) => {
 							pointerEvents: "none",
 						},
 					}}
-					className="border-4 border-white z-10 flex justify-center items-center rounded-full w-16 h-16 fixed bottom-12 right-1/2 translate-x-1/2 md:transform-none md:right-24"
+					className="fixed bottom-12 right-1/2 z-10 flex h-16 w-16 translate-x-1/2 items-center justify-center rounded-full border-4 border-white md:right-24 md:transform-none"
 				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
@@ -131,7 +131,7 @@ const Entry = ({ postJSON }: EntryProps) => {
 						viewBox="0 0 24 24"
 						strokeWidth={2}
 						stroke="#F3F3F3"
-						className="w-10 h-10"
+						className="h-10 w-10"
 					>
 						<path
 							strokeLinecap="round"
@@ -141,16 +141,16 @@ const Entry = ({ postJSON }: EntryProps) => {
 					</svg>
 				</motion.button>
 				<article
-					className="mx-5 md:overflow-visible md:mx-auto max-w-3xl mb-12 
-				mt-10 prose-sm md:prose-lg prose-ol:list-decimal prose-headings:font-mono 
-				prose-p:font-medium prose-headings:font-bold dark:prose-invert prose-pre:p-0
-				prose-pre:bg-none prose-a:text-secondary prose-a:font-semibold 
-				hover:prose-a:brightness-125 prose-a:transition-all prose-a:ease-in-out 
-				prose-a:duration-300 prose-img:mb-2 prose-code:bg-slate-600 prose-code:px-1 prose-code:rounded-md prose-figcaption:text-center prose-figcaption:text-gray-300 prose-figcaption:italic"
+					className="prose-sm mx-5 mb-12 mt-10 max-w-3xl 
+				dark:prose-invert md:prose-lg prose-headings:font-mono prose-headings:font-bold prose-p:font-medium 
+				prose-a:font-semibold prose-a:text-secondary prose-a:transition-all prose-a:duration-300
+				prose-a:ease-in-out hover:prose-a:brightness-125 prose-figcaption:text-center 
+				prose-figcaption:italic prose-figcaption:text-gray-300 prose-code:rounded-md 
+				prose-code:bg-slate-600 prose-code:px-1 prose-pre:bg-none prose-pre:p-0 prose-ol:list-decimal prose-img:mb-2 md:mx-auto md:overflow-visible"
 				>
-					<div className="metadata flex flex-col mb-2 not-prose gap-1">
+					<div className="metadata not-prose mb-2 flex flex-col gap-1">
 						<Link
-							className="mt-6 ms-3 md:m-0 items-center gap-1 mb-2 flex hover:text-shadow-md shadow-white transition-all duration-500 ease-in-out"
+							className="mb-2 ms-3 mt-6 flex items-center gap-1 shadow-white transition-all duration-500 ease-in-out hover:text-shadow-md md:m-0"
 							href="/blog"
 						>
 							<svg
@@ -159,7 +159,7 @@ const Entry = ({ postJSON }: EntryProps) => {
 								viewBox="0 0 24 24"
 								strokeWidth={1.5}
 								stroke="currentColor"
-								className="w-6 h-6"
+								className="h-6 w-6"
 							>
 								<path
 									strokeLinecap="round"
@@ -169,11 +169,11 @@ const Entry = ({ postJSON }: EntryProps) => {
 							</svg>
 							Go back to blog
 						</Link>
-						<p className="text-iGray font-mono m-0 p-0 text-lg">
+						<p className="m-0 p-0 font-mono text-lg text-iGray">
 							{_formatDate(post.date)}
 						</p>
 						<h1 className="mb-5 p-0 text-5xl font-bold">{post.title}</h1>
-						<ul className="grid grid-cols-[repeat(2,minmax(50px,1fr))] md:flex pointer-events-none p-0 m-0 gap-2">
+						<ul className="pointer-events-none m-0 grid grid-cols-[repeat(2,minmax(50px,1fr))] gap-2 p-0 md:flex">
 							{post.categories.map((category) => (
 								<Pill
 									value={category.name}

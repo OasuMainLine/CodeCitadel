@@ -5,7 +5,7 @@
 @layer utilities {
 	.custom-scroll::-webkit-scrollbar,
 	.custom-scroll > div::-webkit-scrollbar {
-		@apply w-5 h-5;
+		@apply h-5 w-5;
 	}
 	.custom-scroll::-webkit-scrollbar-track,
 	.custom-scroll > div::-webkit-scrollbar-track {
@@ -14,7 +14,7 @@
 
 	.custom-scroll::-webkit-scrollbar-thumb,
 	.custom-scroll > div::-webkit-scrollbar-thumb {
-		@apply bg-gray-400 bg-clip-content border-4 border-solid border-transparent rounded-2xl;
+		@apply rounded-2xl border-4 border-solid border-transparent bg-gray-400 bg-clip-content;
 	}
 }
 
@@ -36,7 +36,7 @@
 		background-position-x: -200%;
 	}
 	.active-link {
-		@apply text-primary font-bold bg-none;
+		@apply bg-none font-bold text-primary;
 	}
 
 	.postcard {
@@ -129,6 +129,8 @@
 	}
 }
 
-.math {
-	overflow: auto;
+@media screen and (max-width: 768px) {
+	.math {
+		overflow: auto;
+	}
 }

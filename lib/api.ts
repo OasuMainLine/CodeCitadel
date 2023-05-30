@@ -306,9 +306,9 @@ export async function writeSearches() {
 			.then((asset) => asset.processForLocale("en-US"))
 			.then((asset) => asset.publish());
 
-		console.log("El archivo de busquedas se actualizó con éxito");
+		console.log("El archivo de búsquedas se actualizó con éxito");
 	} catch (err) {
 		console.log(err);
-		console.log("Error al actualizar las busquedas");
+		console.log("Error al actualizar las búsquedas");
 	}
 }
