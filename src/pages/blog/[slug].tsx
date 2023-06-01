@@ -1,6 +1,6 @@
 import { GetStaticPaths } from "next";
 import { GetStaticProps } from "next";
-import { getPostBySlug, getPostsPaths, writeSearches } from "../../../lib/api";
+import { getPostBySlug, getPostsPaths} from "../../../lib/api";
 import {
 	_deserializePosts,
 	_formatDate,
