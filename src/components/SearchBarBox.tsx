@@ -42,6 +42,7 @@ export default function SearchBarBox({
 	const [results, setResults] = useState<Search[]>([]);
 
 	useEffect(() => {
+		console.log(_getSearches());
 		_getSearches().then((newSearches) => setSearches(newSearches));
 	}, []);
 
